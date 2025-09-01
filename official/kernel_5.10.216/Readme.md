@@ -28,11 +28,14 @@ To compile, remove menuconfig, and (optionally) add `-j` with the number of para
 ## What has been patched?
 
 The following parts have been changed:
-*GPIO Driver: The driver interfaces have changed. Now the declaration macros have _fewer parameters, which made the change easy. Changed definitions, extended macros,and updated the function parameters accordingly. To be tested if it works.
-*Denver CPU perf: the interface variables changed to u64. Made a cast where possible. To be tested.
-*CPUfreq: `tegra_cpufreq` and `tegra_cpufreq_hv` have been excluded from build. The Nvidia proprietary drivers are now significantly different. Trying to rely on the built-in kernel implementation for the Tegra
-*CPUidle: the same holds for ` cpuidle-tegra18x`. Excluded and relying on built-in.
-*.. and finally fixed missing compiler and source includes.
+* GPIO Driver: The driver interfaces have changed. Now the declaration macros have _fewer parameters, which made the change easy. Changed definitions, extended macros,and updated the function parameters accordingly. To be tested if it works.
+* Denver CPU perf: the interface variables changed to u64. Made a cast where possible. To be tested.
+* CPUfreq: `tegra_cpufreq` and `tegra_cpufreq_hv` have been excluded from build. The Nvidia proprietary drivers are now significantly different. Trying to rely on the built-in kernel implementation for the Tegra
+* CPUidle: the same holds for ` cpuidle-tegra18x`. Excluded and relying on built-in.
+* .. and finally fixed missing compiler and source includes.
 
+## What works?
+
+Unfortunately, the system boots, reads DTB correctly, but gets stuck halfway through. Trying now to identify the cause of the hang-up.
 
 To be continued..
