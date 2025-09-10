@@ -9,8 +9,7 @@ Unmount everything and plug the SD into the Jetson.
 
 Use the Serial adapter to connect a terminal to the TX2 on the GPIO pin-header via software like `tio` or `screen`.
 
-Start the Jetson and press a key to stop the automatic boot. Then type `devnum=1; run mmc_boot`
-This will start EFI and GRUB from the SD. Press `e` on the first menu item, go to the `linux` line, and add `console=ttyS0,115200n8` to enable terminal
-On a new line, add `devicetree` and the path and filename of the `dtb` file. You can use TAB to autocomplete commands and paths. `ctrl+x` will boot.
+Start the Jetson - this will start EFI and GRUB from the SD. Press `e` on the first menu item, go to the `linux` line, and add `console=ttyS0,115200n8` to enable the serial terminal.
+On a new line, add `devicetree` and the path and filename of the `dtb` file. The second partition can be selected with `(hd0,2)/`. You can use TAB to autocomplete commands and paths. `ctrl+x` will boot.
 
 Enjoy!
